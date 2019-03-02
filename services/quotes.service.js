@@ -1,8 +1,8 @@
 const QuotesRepository = require('../repositories/quotes.repository.js')
 
 const QuotesService = {
-  findAll: ({ limit }) => {
-    return QuotesRepository.findAll({ limit })
+  findAll: ({ limit, startDate, endDate }) => {
+    return QuotesRepository.findAll({ limit, startDate, endDate })
   }
 }
 
