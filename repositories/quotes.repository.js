@@ -21,7 +21,6 @@ const QuotesRepository = {
       AND val LIKE '${hash}%'
     `
     const sql =  mysql.format(query, [limit, startDate, endDate])
-    console.log(sql)
 
     return connection.query(sql)
   }
