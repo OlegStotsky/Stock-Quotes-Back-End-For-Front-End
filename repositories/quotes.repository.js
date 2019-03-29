@@ -18,8 +18,8 @@ const QuotesRepository = {
       AND Quote.hash_id = Hash.id
       AND createdAt >= ?
       AND createdAt <= ?
-      AND val LIKE '${hash}%'
-    `
+      AND val LIKE 
+    ` + connection.escape(hash + '%')
     const sql =  mysql.format(query, [limit, startDate, endDate])
 
     return connection.query(sql)
